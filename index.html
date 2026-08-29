@@ -1,12 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LUMELLE - Handmade With Love</title>
+    <title>YARN MUSE - Handmade With Love</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,9 +19,9 @@
 
     <div class="welcomeBox">
 
-        <img src="lumelle-logo.png" alt="LUMELLE Logo">
+        <img src="yarn-muse-logo.png" alt="Yarn Muse Logo">
 
-        <h1>Welcome to LUMELLE</h1>
+        <h1>YARN MUSE</h1>
 
         <p>HANDMADE WITH LOVE</p>
 
@@ -40,11 +38,11 @@
 
     <div class="brand">
 
-        <img src="lumelle-logo.png" alt="LUMELLE Logo">
+        <img src="yarn-muse-logo.png" alt="Yarn Muse Logo">
 
         <div class="brandText">
 
-            <h1>LUMELLE</h1>
+            <h1>YARN MUSE</h1>
 
             <span>HANDMADE WITH LOVE</span>
 
@@ -56,13 +54,29 @@
     <nav>
 
         <a href="#home">Home</a>
+
         <a href="#shop">Shop</a>
+
         <a href="#about">About</a>
+
         <a href="#contact">Contact</a>
 
     </nav>
 
 </header>
+
+
+<!-- =========================
+     FLOATING CART
+========================= -->
+
+<button class="floatingCart" onclick="openCart()">
+
+    🛒 Cart
+
+    <span id="cartCount">0</span>
+
+</button>
 
 
 <!-- =========================
@@ -72,20 +86,20 @@
 <section class="hero" id="home">
 
     <p class="handmadeTop">
-        ✦ MADE WITH HAND ✦
+        ✨ HANDMADE • UNIQUE • LOVELY ✨
     </p>
 
     <h2>
-        Handmade Beauty,<br>
+        Tiny Handmade Things,<br>
         Made With Love
     </h2>
 
     <p>
-        Cute • Handmade • Unique
+        Beautiful crochet accessories made specially for you.
     </p>
 
     <a href="#shop" class="shopButton">
-        SHOP NOW
+        Shop Now
     </a>
 
 </section>
@@ -102,94 +116,66 @@
     </h2>
 
 
-    <!-- =========================
+    <!-- =====================
          PRODUCT 1
-    ========================= -->
+    ====================== -->
 
     <div class="productCard">
 
         <div class="productImage">
 
             <img
-                id="image1"
                 src="picture1.jpg"
-                alt="Handmade Crochet Bow"
-                onclick="openImageWindow(this.src)"
+                alt="Yarn Muse Product 1"
+                onclick="openImage(this.src)"
             >
-
-            <p class="imageHint">
-                Click image to view larger
-            </p>
 
         </div>
 
 
         <div class="productDetails">
 
-            <h3>
-                Handmade Crochet Bow
-            </h3>
+            <h3>Handmade Crochet Bow</h3>
 
             <p class="description">
-                Beautiful handmade crochet bow
-                that can be used as a hair accessory
-                or keychain.
+                Beautiful handmade crochet bow, perfect for
+                hair accessories, keychains and gifting.
             </p>
 
+
             <div class="price">
-                Rs. 999
+                Rs. 800
             </div>
 
 
-            <!-- COLOR -->
-
             <div class="option">
 
-                <label for="color1">
-                    Colour
-                </label>
+                <label>Colour</label>
 
-                <select
-                    id="color1"
-                    onchange="changeColor1(this.value)"
-                >
+                <select id="color1">
 
-                    <option value="Original">
-                        Original
-                    </option>
+                    <option value="Blue">Blue</option>
 
-                    <option value="Red">
-                        Red
-                    </option>
+                    <option value="Red">Red</option>
 
                 </select>
 
             </div>
 
 
-            <!-- QUANTITY -->
-
             <div class="option">
 
-                <label>
-                    Quantity
-                </label>
+                <label>Quantity</label>
 
                 <div class="quantityBox">
 
-                    <button
-                        type="button"
-                        onclick="changeQuantity('qty1', -1)"
-                    >
+                    <button onclick="changeProductQty(1, -1)">
                         −
                     </button>
 
                     <span id="qty1">1</span>
 
-                    <button
-                        type="button"
-                        onclick="changeQuantity('qty1', 1)"
-                    >
+                    <button onclick="changeProductQty(1, 1)">
                         +
                     </button>
 
@@ -199,19 +185,17 @@
 
 
             <button
-                type="button"
                 class="addCart"
-                onclick="addProduct(
+                onclick="addToCart(
+                    1,
                     'Handmade Crochet Bow',
-                    999,
-                    document.getElementById('image1').src,
+                    800,
+                    'picture1.jpg',
                     document.getElementById('color1').value,
-                    document.getElementById('qty1').innerText
+                    parseInt(document.getElementById('qty1').innerText)
                 )"
             >
-
-                🛒 Add to Cart
-
+                Add To Cart
             </button>
 
         </div>
@@ -219,93 +203,67 @@
     </div>
 
 
-    <!-- =========================
+
+    <!-- =====================
          PRODUCT 2
-    ========================= -->
+    ====================== -->
 
     <div class="productCard">
 
         <div class="productImage">
 
             <img
-                id="image2"
                 src="picture2.jpg"
-                alt="Crochet Hair Bandana"
-                onclick="openImageWindow(this.src)"
+                alt="Yarn Muse Product 2"
+                onclick="openImage(this.src)"
             >
-
-            <p class="imageHint">
-                Click image to view larger
-            </p>
 
         </div>
 
 
         <div class="productDetails">
 
-            <h3>
-                Crochet Hair Bandana
-            </h3>
+            <h3>Handmade Crochet Bow</h3>
 
             <p class="description">
-                Soft and stylish handmade crochet
-                hair bandana, perfect for everyday looks.
+                A cute handmade crochet accessory with
+                beautiful finishing. Perfect for everyday use.
             </p>
 
+
             <div class="price">
-                Rs. 1,299
+                Rs. 899
             </div>
 
 
-            <!-- COLOR -->
-
             <div class="option">
 
-                <label for="color2">
-                    Colour
-                </label>
+                <label>Colour</label>
 
-                <select
-                    id="color2"
-                    onchange="changeColor2(this.value)"
-                >
+                <select id="color2">
 
-                    <option value="Original">
-                        Original
-                    </option>
+                    <option value="Blue">Blue</option>
 
-                    <option value="Burgundy">
-                        Burgundy
-                    </option>
+                    <option value="Burgundy">Burgundy</option>
 
                 </select>
 
             </div>
 
 
-            <!-- QUANTITY -->
-
             <div class="option">
 
-                <label>
-                    Quantity
-                </label>
+                <label>Quantity</label>
 
                 <div class="quantityBox">
 
-                    <button
-                        type="button"
-                        onclick="changeQuantity('qty2', -1)"
-                    >
+                    <button onclick="changeProductQty(2, -1)">
                         −
                     </button>
 
                     <span id="qty2">1</span>
 
-                    <button
-                        type="button"
-                        onclick="changeQuantity('qty2', 1)"
-                    >
+                    <button onclick="changeProductQty(2, 1)">
                         +
                     </button>
 
@@ -315,19 +273,17 @@
 
 
             <button
-                type="button"
                 class="addCart"
-                onclick="addProduct(
-                    'Crochet Hair Bandana',
-                    1299,
-                    document.getElementById('image2').src,
+                onclick="addToCart(
+                    2,
+                    'Handmade Crochet Bow',
+                    899,
+                    'picture2.jpg',
                     document.getElementById('color2').value,
-                    document.getElementById('qty2').innerText
+                    parseInt(document.getElementById('qty2').innerText)
                 )"
             >
-
-                🛒 Add to Cart
-
+                Add To Cart
             </button>
 
         </div>
@@ -335,9 +291,10 @@
     </div>
 
 
-    <!-- =========================
+
+    <!-- =====================
          PRODUCT 3
-    ========================= -->
+    ====================== -->
 
     <div class="productCard">
 
@@ -345,75 +302,56 @@
 
             <img
                 src="picture3.jpg"
-                alt="Lilly Handmade Charm"
-                onclick="openImageWindow(this.src)"
+                alt="Yarn Muse Product 3"
+                onclick="openImage(this.src)"
             >
-
-            <p class="imageHint">
-                Click image to view larger
-            </p>
 
         </div>
 
 
         <div class="productDetails">
 
-            <h3>
-                Lilly Handmade Charm
-            </h3>
+            <h3>Cute Crochet Accessory</h3>
 
             <p class="description">
-                Cute handmade crochet charm
-                with a beautiful floral design.
+                Handmade crochet accessory created with
+                care and attention to every little detail.
             </p>
 
+
             <div class="price">
-                Rs. 899
+                Rs. 500
             </div>
 
 
-            <!-- COLOR -->
-
             <div class="option">
 
-                <label for="color3">
-                    Colour
-                </label>
+                <label>Colour</label>
 
                 <select id="color3">
 
-                    <option value="Original">
-                        Original
-                    </option>
+                    <option value="Original">Original</option>
+
+                    <option value="Red">Red</option>
 
                 </select>
 
             </div>
 
 
-            <!-- QUANTITY -->
-
             <div class="option">
 
-                <label>
-                    Quantity
-                </label>
+                <label>Quantity</label>
 
                 <div class="quantityBox">
 
-                    <button
-                        type="button"
-                        onclick="changeQuantity('qty3', -1)"
-                    >
+                    <button onclick="changeProductQty(3, -1)">
                         −
                     </button>
 
                     <span id="qty3">1</span>
 
-                    <button
-                        type="button"
-                        onclick="changeQuantity('qty3', 1)"
-                    >
+                    <button onclick="changeProductQty(3, 1)">
                         +
                     </button>
 
@@ -423,19 +361,17 @@
 
 
             <button
-                type="button"
                 class="addCart"
-                onclick="addProduct(
-                    'Lilly Handmade Charm',
-                    899,
+                onclick="addToCart(
+                    3,
+                    'Cute Crochet Accessory',
+                    500,
                     'picture3.jpg',
                     document.getElementById('color3').value,
-                    document.getElementById('qty3').innerText
+                    parseInt(document.getElementById('qty3').innerText)
                 )"
             >
-
-                🛒 Add to Cart
-
+                Add To Cart
             </button>
 
         </div>
@@ -443,9 +379,10 @@
     </div>
 
 
-    <!-- =========================
+
+    <!-- =====================
          PRODUCT 4
-    ========================= -->
+    ====================== -->
 
     <div class="productCard">
 
@@ -453,75 +390,56 @@
 
             <img
                 src="picture4.jpg"
-                alt="Crochet Flower Hair Accessory"
-                onclick="openImageWindow(this.src)"
+                alt="Yarn Muse Product 4"
+                onclick="openImage(this.src)"
             >
-
-            <p class="imageHint">
-                Click image to view larger
-            </p>
 
         </div>
 
 
         <div class="productDetails">
 
-            <h3>
-                Crochet Flower Hair Accessory
-            </h3>
+            <h3>Handmade Crochet Hair Tie</h3>
 
             <p class="description">
-                Beautiful handmade crochet flower
-                accessory for a cute and elegant look.
+                A lovely handmade crochet piece that adds
+                a cute touch to your everyday style.
             </p>
 
+
             <div class="price">
-                Rs. 1,099
+                Rs. 500
             </div>
 
 
-            <!-- COLOR -->
-
             <div class="option">
 
-                <label for="color4">
-                    Colour
-                </label>
+                <label>Colour</label>
 
                 <select id="color4">
 
-                    <option value="Original">
-                        Original
-                    </option>
+                    <option value="Green">Green</option>
+
+                    <option value="Pink">Pink</option>
 
                 </select>
 
             </div>
 
 
-            <!-- QUANTITY -->
-
             <div class="option">
 
-                <label>
-                    Quantity
-                </label>
+                <label>Quantity</label>
 
                 <div class="quantityBox">
 
-                    <button
-                        type="button"
-                        onclick="changeQuantity('qty4', -1)"
-                    >
+                    <button onclick="changeProductQty(4, -1)">
                         −
                     </button>
 
                     <span id="qty4">1</span>
 
-                    <button
-                        type="button"
-                        onclick="changeQuantity('qty4', 1)"
-                    >
+                    <button onclick="changeProductQty(4, 1)">
                         +
                     </button>
 
@@ -531,19 +449,17 @@
 
 
             <button
-                type="button"
                 class="addCart"
-                onclick="addProduct(
-                    'Crochet Flower Hair Accessory',
-                    1099,
+                onclick="addToCart(
+                    4,
+                    'Handmade Crochet Hair Tie',
+                    500,
                     'picture4.jpg',
                     document.getElementById('color4').value,
-                    document.getElementById('qty4').innerText
+                    parseInt(document.getElementById('qty4').innerText)
                 )"
             >
-
-                🛒 Add to Cart
-
+                Add To Cart
             </button>
 
         </div>
@@ -554,107 +470,47 @@
 
 
 <!-- =========================
-     FLOATING CART
-========================= -->
-
-<button
-    type="button"
-    class="floatingCart"
-    onclick="openCart()"
->
-
-    🛒
-
-    <span>
-        Cart
-    </span>
-
-    <b id="cartCount">
-        0
-    </b>
-
-</button>
-
-
-<!-- =========================
-     CART MODAL
-========================= -->
-
-<div
-    id="cartModal"
-    class="cartModal"
->
-
-    <div class="cartBox">
-
-        <button
-            type="button"
-            class="closeCart"
-            onclick="closeCart()"
-        >
-            ✕
-        </button>
-
-
-        <h2>
-            🛒 Your Cart
-        </h2>
-
-
-        <div id="cartItems"></div>
-
-
-        <div class="cartTotal">
-
-            <span>
-                Total
-            </span>
-
-            <strong>
-                Rs.
-                <span id="cartTotal">
-                    0
-                </span>
-            </strong>
-
-        </div>
-
-
-        <button
-            type="button"
-            class="instagramButton"
-            onclick="instagramOrder()"
-        >
-            Order on Instagram
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
      ABOUT
 ========================= -->
 
-<section
-    class="about"
-    id="about"
->
+<section class="about" id="about">
 
     <p class="aboutSmall">
-        HANDMADE WITH LOVE
+        MADE WITH CARE
     </p>
 
     <h2>
-        About LUMELLE
+        About YARN MUSE
     </h2>
 
     <p>
-        LUMELLE is all about beautiful handmade
-        accessories created with care, creativity
-        and love.
+        YARN MUSE creates tiny handmade crochet pieces
+        with love, creativity and care. Every piece is
+        made to feel special and unique.
     </p>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <h2>Contact YARN MUSE</h2>
+
+    <p>
+        Want a custom colour or special order?
+    </p>
+
+    <a
+        href="https://www.instagram.com/yarn_muse/"
+        target="_blank"
+        class="instagramButton"
+    >
+        📷 Follow YARN MUSE on Instagram
+    </a>
 
 </section>
 
@@ -663,37 +519,153 @@
      FOOTER
 ========================= -->
 
-<footer id="contact">
+<footer>
 
-    <h2>
-        LUMELLE
-    </h2>
+    <h2>YARN MUSE</h2>
 
-    <p>
-        Handmade With Love
-    </p>
+    <p>Handmade With Love 🧶</p>
 
-    <p>
-        Instagram:
-        <a
-            href="https://www.instagram.com/tinyy.arnstudio/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            @tinyy.arnstudio 🧶
-        </a>
-    </p>
-
-    <p>
-        © 2026 LUMELLE. All Rights Reserved.
-    </p>
+    <p>© 2026 YARN MUSE. All Rights Reserved.</p>
 
 </footer>
 
 
+
 <!-- =========================
-     JAVASCRIPT
+     CART MODAL
 ========================= -->
+
+<div class="cartModal" id="cartModal">
+
+    <div class="cartBox">
+
+        <button
+            class="closeCart"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+
+        <h2>Your Cart 🛒</h2>
+
+
+        <div id="cartItems">
+
+            <p class="emptyCart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+
+        <!-- TOTAL -->
+
+        <div class="cartSummary">
+
+            <div>
+
+                <span>Subtotal</span>
+
+                <strong id="cartSubtotal">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Delivery Charges</span>
+
+                <strong>
+                    Rs. 200
+                </strong>
+
+            </div>
+
+
+            <div class="grandTotal">
+
+                <span>Total</span>
+
+                <strong id="cartTotal">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ORDER FORM -->
+
+        <div class="orderForm">
+
+            <h3>
+                Order Details
+            </h3>
+
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your Name"
+            >
+
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Phone Number"
+            >
+
+
+            <textarea
+                id="customerAddress"
+                placeholder="Complete Delivery Address"
+            ></textarea>
+
+
+            <button
+                class="orderButton"
+                onclick="placeOrder()"
+            >
+                📱 Place Order
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     IMAGE VIEWER
+========================= -->
+
+<div
+    class="imageViewer"
+    id="imageViewer"
+>
+
+    <button
+        class="imageClose"
+        onclick="closeImage()"
+    >
+        ×
+    </button>
+
+
+    <img
+        id="viewerImage"
+        src=""
+        alt="Yarn Muse Product"
+    >
+
+</div>
+
 
 <script>
 
@@ -705,14 +677,9 @@ window.addEventListener("load", function () {
 
     setTimeout(function () {
 
-        const welcome =
-            document.getElementById("welcomeScreen");
-
-        if (welcome) {
-
-            welcome.classList.add("hide");
-
-        }
+        document
+            .getElementById("welcomeScreen")
+            .classList.add("hide");
 
     }, 2000);
 
@@ -720,223 +687,24 @@ window.addEventListener("load", function () {
 
 
 /* =========================
-   OPEN IMAGE IN NEW WINDOW
+   PRODUCT QUANTITY
 ========================= */
 
-function openImageWindow(src) {
+function changeProductQty(productId, change) {
 
-    const imageWindow = window.open(
-        "",
-        "_blank",
-        "width=1000,height=800,resizable=yes,scrollbars=yes"
-    );
+    const qtyElement =
+        document.getElementById("qty" + productId);
 
-    if (!imageWindow) {
+    let quantity =
+        parseInt(qtyElement.innerText);
 
-        alert("Please allow pop-ups for this website.");
+    quantity += change;
 
-        return;
-
+    if (quantity < 1) {
+        quantity = 1;
     }
 
-
-    imageWindow.document.write(`
-
-        <!DOCTYPE html>
-
-        <html>
-
-        <head>
-
-            <title>LUMELLE - Product Image</title>
-
-            <meta name="viewport"
-                  content="width=device-width, initial-scale=1.0">
-
-            <style>
-
-                * {
-                    box-sizing: border-box;
-                }
-
-                html,
-                body {
-
-                    margin: 0;
-                    padding: 0;
-
-                    width: 100%;
-                    height: 100%;
-
-                    background: #000;
-
-                    overflow: auto;
-
-                    font-family: Arial, sans-serif;
-
-                }
-
-                body {
-
-                    display: flex;
-
-                    align-items: center;
-
-                    justify-content: center;
-
-                    padding: 70px 20px 30px;
-
-                }
-
-                .closeButton {
-
-                    position: fixed;
-
-                    top: 20px;
-                    right: 25px;
-
-                    width: 50px;
-                    height: 50px;
-
-                    border: none;
-
-                    border-radius: 50%;
-
-                    background: white;
-
-                    color: #d16f8d;
-
-                    font-size: 26px;
-
-                    font-weight: bold;
-
-                    cursor: pointer;
-
-                    z-index: 9999;
-
-                }
-
-                .closeButton:hover {
-
-                    background: #ffe6ef;
-
-                }
-
-                .bigImage {
-
-                    display: block;
-
-                    width: auto;
-
-                    height: auto;
-
-                    max-width: 95vw;
-
-                    max-height: 90vh;
-
-                    object-fit: contain;
-
-                    border-radius: 10px;
-
-                }
-
-            </style>
-
-        </head>
-
-        <body>
-
-            <button
-                class="closeButton"
-                onclick="window.close()"
-            >
-                ✕
-            </button>
-
-            <img
-                class="bigImage"
-                src="${src}"
-                alt="LUMELLE Product"
-            >
-
-        </body>
-
-        </html>
-
-    `);
-
-    imageWindow.document.close();
-
-}
-
-
-/* =========================
-   PRODUCT 1 COLOR
-========================= */
-
-function changeColor1(value) {
-
-    const image =
-        document.getElementById("image1");
-
-    if (value === "Red") {
-
-        image.src = "picture1-red.jpg";
-
-    } else {
-
-        image.src = "picture1.jpg";
-
-    }
-
-}
-
-
-/* =========================
-   PRODUCT 2 COLOR
-========================= */
-
-function changeColor2(value) {
-
-    const image =
-        document.getElementById("image2");
-
-    if (value === "Burgundy") {
-
-        image.src = "picture2-burgundy.jpg";
-
-    } else {
-
-        image.src = "picture2.jpg";
-
-    }
-
-}
-
-
-/* =========================
-   QUANTITY
-========================= */
-
-function changeQuantity(id, amount) {
-
-    const element =
-        document.getElementById(id);
-
-    let number =
-        parseInt(element.innerText);
-
-    number += amount;
-
-
-    if (number < 1) {
-
-        number = 1;
-
-    }
-
-
-    element.innerText = number;
+    qtyElement.innerText = quantity;
 
 }
 
@@ -947,12 +715,13 @@ function changeQuantity(id, amount) {
 
 let cart = [];
 
+const deliveryCharge = 200;
 
-/* =========================
-   ADD PRODUCT
-========================= */
 
-function addProduct(
+/* ADD TO CART */
+
+function addToCart(
+    id,
     name,
     price,
     image,
@@ -960,33 +729,31 @@ function addProduct(
     quantity
 ) {
 
-    quantity =
-        parseInt(quantity);
+    const existingItem = cart.find(
+        item =>
+            item.id === id &&
+            item.color === color
+    );
 
 
-    let existing =
-        cart.find(function(item) {
+    if (existingItem) {
 
-            return (
-                item.name === name &&
-                item.color === color
-            );
-
-        });
-
-
-    if (existing) {
-
-        existing.quantity += quantity;
+        existingItem.quantity += quantity;
 
     } else {
 
         cart.push({
 
+            id: id,
+
             name: name,
+
             price: price,
+
             image: image,
+
             color: color,
+
             quantity: quantity
 
         });
@@ -996,16 +763,12 @@ function addProduct(
 
     updateCart();
 
-    alert(
-        "Product cart mein add ho gaya ❤️"
-    );
+    openCart();
 
 }
 
 
-/* =========================
-   UPDATE CART
-========================= */
+/* UPDATE CART */
 
 function updateCart() {
 
@@ -1015,124 +778,137 @@ function updateCart() {
     const cartCount =
         document.getElementById("cartCount");
 
+    const cartSubtotal =
+        document.getElementById("cartSubtotal");
+
     const cartTotal =
         document.getElementById("cartTotal");
 
 
-    cartItems.innerHTML = "";
-
+    let subtotal = 0;
 
     let totalItems = 0;
 
-    let totalPrice = 0;
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+            <p class="emptyCart">
+                Your cart is empty.
+            </p>
+        `;
+
+    } else {
+
+        cartItems.innerHTML = "";
 
 
-    cart.forEach(function(item, index) {
+        cart.forEach(function (item, index) {
 
-        totalItems += item.quantity;
+            subtotal +=
+                item.price * item.quantity;
 
-        totalPrice +=
-            item.price * item.quantity;
-
-
-        const div =
-            document.createElement("div");
+            totalItems += item.quantity;
 
 
-        div.className =
-            "cartItem";
+            const itemDiv =
+                document.createElement("div");
+
+            itemDiv.className = "cartItem";
 
 
-        div.innerHTML = `
+            itemDiv.innerHTML = `
 
-            <img
-                src="${item.image}"
-                alt="${item.name}"
-            >
+                <img
+                    src="${item.image}"
+                    alt="${item.name}"
+                    onclick="openImage('${item.image}')"
+                >
 
-            <div class="cartItemInfo">
+                <div class="cartItemInfo">
 
-                <h3>
-                    ${item.name}
-                </h3>
+                    <h3>
+                        ${item.name}
+                    </h3>
 
-                <p>
-                    Colour:
-                    <strong>
-                        ${item.color}
-                    </strong>
-                </p>
+                    <p>
+                        Colour: ${item.color}
+                    </p>
 
-                <p>
-                    Rs.
-                    ${item.price.toLocaleString()}
-                </p>
+                    <p>
+                        Rs. ${item.price}
+                    </p>
 
-                <div class="cartQuantity">
+                    <div class="cartQuantity">
 
-                    <button
-                        type="button"
-                        onclick="cartQuantity(${index}, -1)"
-                    >
-                        −
-                    </button>
+                        <button
+                            onclick="changeCartQty(${index}, -1)"
+                        >
+                            −
+                        </button>
 
-                    <span>
-                        ${item.quantity}
-                    </span>
+                        <span>
+                            ${item.quantity}
+                        </span>
 
-                    <button
-                        type="button"
-                        onclick="cartQuantity(${index}, 1)"
-                    >
-                        +
-                    </button>
+                        <button
+                            onclick="changeCartQty(${index}, 1)"
+                        >
+                            +
+                        </button>
+
+                    </div>
 
                 </div>
 
-            </div>
+
+                <button
+                    class="removeButton"
+                    onclick="removeFromCart(${index})"
+                >
+                    🗑
+                </button>
+
+            `;
 
 
-            <button
-                type="button"
-                class="removeButton"
-                onclick="removeProduct(${index})"
-            >
-                ✕
-            </button>
+            cartItems.appendChild(itemDiv);
 
-        `;
+        });
 
-
-        cartItems.appendChild(div);
-
-    });
+    }
 
 
     cartCount.innerText =
         totalItems;
 
 
-    cartTotal.innerText =
-        totalPrice.toLocaleString();
-
-}
+    cartSubtotal.innerText =
+        "Rs. " + subtotal;
 
 
-/* =========================
-   CART QUANTITY
-========================= */
+    let total = 0;
 
-function cartQuantity(index, amount) {
 
-    if (!cart[index]) {
+    if (cart.length > 0) {
 
-        return;
+        total =
+            subtotal + deliveryCharge;
 
     }
 
 
-    cart[index].quantity += amount;
+    cartTotal.innerText =
+        "Rs. " + total;
+
+}
+
+
+/* CHANGE CART QUANTITY */
+
+function changeCartQty(index, change) {
+
+    cart[index].quantity += change;
 
 
     if (cart[index].quantity <= 0) {
@@ -1147,11 +923,9 @@ function cartQuantity(index, amount) {
 }
 
 
-/* =========================
-   REMOVE PRODUCT
-========================= */
+/* REMOVE */
 
-function removeProduct(index) {
+function removeFromCart(index) {
 
     cart.splice(index, 1);
 
@@ -1160,9 +934,7 @@ function removeProduct(index) {
 }
 
 
-/* =========================
-   OPEN CART
-========================= */
+/* OPEN CART */
 
 function openCart() {
 
@@ -1173,9 +945,7 @@ function openCart() {
 }
 
 
-/* =========================
-   CLOSE CART
-========================= */
+/* CLOSE CART */
 
 function closeCart() {
 
@@ -1187,48 +957,64 @@ function closeCart() {
 
 
 /* =========================
-   CART OUTSIDE CLICK
+   IMAGE VIEWER
 ========================= */
 
-document
-    .getElementById("cartModal")
-    .addEventListener(
-        "click",
-        function(event) {
+function openImage(imageSrc) {
 
-            if (event.target === this) {
-
-                closeCart();
-
-            }
-
-        }
-    );
+    document
+        .getElementById("viewerImage")
+        .src = imageSrc;
 
 
-/* =========================
-   INSTAGRAM ORDER
-========================= */
+    document
+        .getElementById("imageViewer")
+        .classList.add("show");
 
-function instagramOrder() {
 
-    window.open(
-        "https://www.instagram.com/tinyy.arnstudio/",
-        "_blank"
-    );
+    document.body.style.overflow =
+        "hidden";
 
 }
 
 
-/* =========================
-   ESC KEY
-========================= */
+function closeImage() {
+
+    document
+        .getElementById("imageViewer")
+        .classList.remove("show");
+
+
+    document.body.style.overflow =
+        "auto";
+
+}
+
+
+/* CLICK BLACK BACKGROUND TO CLOSE */
+
+document
+    .getElementById("imageViewer")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+
+            closeImage();
+
+        }
+
+    });
+
+
+/* ESC KEY */
 
 document.addEventListener(
     "keydown",
     function(event) {
 
         if (event.key === "Escape") {
+
+            closeImage();
 
             closeCart();
 
@@ -1237,8 +1023,169 @@ document.addEventListener(
     }
 );
 
+
+/* =========================
+   PLACE ORDER
+========================= */
+
+function placeOrder() {
+
+    if (cart.length === 0) {
+
+        alert("Please add a product to cart first.");
+
+        return;
+
+    }
+
+
+    const name =
+        document
+            .getElementById("customerName")
+            .value.trim();
+
+
+    const phone =
+        document
+            .getElementById("customerPhone")
+            .value.trim();
+
+
+    const address =
+        document
+            .getElementById("customerAddress")
+            .value.trim();
+
+
+    if (!name || !phone || !address) {
+
+        alert(
+            "Please enter your name, phone number and address."
+        );
+
+        return;
+
+    }
+
+
+    let subtotal = 0;
+
+    let message =
+        "🧶 *YARN MUSE ORDER*%0A%0A";
+
+
+    message +=
+        "*Customer:* " +
+        name +
+        "%0A";
+
+
+    message +=
+        "*Phone:* " +
+        phone +
+        "%0A";
+
+
+    message +=
+        "*Address:* " +
+        address +
+        "%0A%0A";
+
+
+    message +=
+        "*Products:*%0A";
+
+
+    cart.forEach(function(item) {
+
+        const itemTotal =
+            item.price * item.quantity;
+
+
+        subtotal += itemTotal;
+
+
+        message +=
+            "• " +
+            item.name +
+            "%0A";
+
+
+        message +=
+            "  Colour: " +
+            item.color +
+            "%0A";
+
+
+        message +=
+            "  Qty: " +
+            item.quantity +
+            "%0A";
+
+
+        message +=
+            "  Price: Rs. " +
+            item.price +
+            "%0A";
+
+
+        message +=
+            "  Total: Rs. " +
+            itemTotal +
+            "%0A%0A";
+
+    });
+
+
+    const total =
+        subtotal + deliveryCharge;
+
+
+    message +=
+        "*Subtotal:* Rs. " +
+        subtotal +
+        "%0A";
+
+
+    message +=
+        "*Delivery:* Rs. 200%0A";
+
+
+    message +=
+        "*GRAND TOTAL:* Rs. " +
+        total;
+
+
+    /*
+       Yahan apna WhatsApp number
+       baad mein add karna hai.
+
+       Example:
+       923001234567
+
+       Pakistan number mein + ya 0
+       nahi lagana.
+    */
+
+    const whatsappNumber =
+        "923001234567";
+
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        message;
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
 </script>
 
 </body>
 </html>
-```
